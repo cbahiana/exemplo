@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelo Básico HTML</title>
+  <meta charset="utf-8" />
+  <link type="text/css" rel="stylesheet" href="css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand|Roboto" rel="stylesheet">
+  <script>
+	document.addEventListener('touchstart', function addtouchclass(e){ // first time user touches the screen
+	    document.documentElement.classList.add('can-touch') // add "can-touch" class to document root using classList API
+	    document.removeEventListener('touchstart', addtouchclass, false) // de-register touchstart event
+	}, false)
+	document.removeEventListener('touchend', function addtouchclass(e){ 
+	    document.documentElement.classList.remove('can-touch')
+	    document.removeEventListener('touchend', removetouchclass, false)
+	}, false)
+  </script>
+  <style>
+  	h1 {font-family: 'Shrikhand', cursive;color:rgba(0,200,50,.7);}
+  	p {color:#666;}
+  	article p {color:#4476ef;}
+  	article section#dois p {color:#44ef76;}
+  	#a, #b {width:350px;height:auto;}
+   	section figure {width:400px;}
+  	section figure img {width:100%;height:auto;}
+  	nav#topo {margin:10px auto;text-align:center;}
+  	nav#topo a {display:inline-block;border-right:dashed 1px #000;padding:5px 10px;text-decoration:none;}
+  	nav#topo a:hover {text-decoration:underline;animation-name: rubberBand;}
+  	nav#topo a:last-child {border-right:none;}
+  	.clearfix:after {content:" ";clear:both;display:table;}
+  	#esquerdo, #direito {box-sizing:border-box;width:25%;border:double 10px #99E;}
+ 	#esquerdo {float:left;}
+ 	#direito {float:right;}
+ 	form {margin:1em 0;}
+ 	form label, form input {display:block;float:left;height:1.2em;margin-bottom:0.3em;}
+ 	form label {clear:left;width:8em;text-align:right;margin-right:0.3em;}
+ 	form input {clear:right;}
+ 	ol li ol {display:none;}
+ 	ol li:hover > ol, ol li:focus > ol {display:block;}
+ 	ol {counter-reset: item;}
+	ol > li {counter-increment: item;}
+	ol ol > li {display: block;}
+	ol ol > li:before {content: counters(item, ".") ". "; margin-left: -20px;}
+	/* Animação */
+	.rodar {
+	rotate(‐5deg);
+		animation-name: rodar;
+		animation-duration: 0s;
+		animation-timing-function: ease;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+		animation-play-state: running;
+		}
+		@keyframes rodar {
+		  from {
+		    margin-left: 100%;
+		    width: 300%; 
+		  }
+		
+		  to {
+		    margin-left: 0%;
+		    width: 100%;
+		  }
+		}
+	.zoom {
+	transform scale(1.2);
+		animation-name: zoom;
+		animation-duration: 0s;
+		animation-timing-function: ease;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+		animation-play-state: running;
+	}
+		@keyframes zoom {
+		  from {
+		    margin-left: 100%;
+		    width: 300%; 
+		  }
+		
+		  to {
+		    margin-left: 0%;
+		    width: 100%;
+		  }
+		}
+
+	/* Responsividade */
+ 	@media (min-width:1025px) {
+ 	}
+ 	@media (min-width:769px) and (max-width: 1024px) {
+ 	}
+ 	@media (max-width:768px) {
+ 		#esquerdo, #direito {
+ 			float:none;
+ 			width:100%;
+ 			}
+ 		#a, #b {
+ 			width:100%;
+ 			margin:1em auto;
+ 			}
+ 		section figure {
+ 			width:100%;
+ 			}
+ 		form {
+ 			margin:1em auto;
+ 			}
+ 		form label, form input {
+ 			float:none;
+ 			text-align:left;
+ 			}
+ 		figure {
+ 			margin:1em auto;
+ 			padding:0;
+  	}
+  </style>
+</head>
+<body style="font-family:roboto,arial,sans;color:#333;font-size:1.2em;">
+<header class="clearfix">
+<div id="esquerdo">&nbsp;</div>
+<div id="direito">&nbsp;</div>
+</header>
+<nav id="topo">
+	<a class="animated" href="#" title="vamos ver como se faz">Home</a>
+	<a class="animated" href="#" title="vamos ver como se faz">Local</a>
+	<a class="animated" href="#" title="vamos ver como se faz">Evento</a>
+	<a class="animated" href="#" title="vamos ver como se faz">Cardápio</a>
+	<a class="animated" href="#" title="vamos ver como se faz">Contato</a>
+</nav>
+<main>
+<h1>Com serifa</h1>
+<p>Sem serifa</p>
+<p>Este texto tem palavras com <strong>strong</strong>, com <span style="font-size:larger;">font-size</span> e com <span style="font-weight:bold">font-weight</span.</p>
+<p style="color:red;">Sem serifa</p>
+<img id="a" src="imagens/formatos-de-papel.jpg" alt="imagem ilustrando as proporções de tamanhos de papel no padrão ISO">
+<img id="b" src="imagens/formatos-de-papel.jpg" alt="imagem ilustrando as proporções de tamanhos de papel no padrão ISO">
+<span id="c">Texto no span C</span><span id="d">Texto no span D</span>
+<p style="font-family:Arial;font-size:16px;">Texto escrito em tamanho 16px (Arial)</p>
+<p style="font-family:Tahoma;font-size:16px;">Texto escrito em tamanho 16px (Tahoma)</p>
+<p style="font-family:Verdana;font-size:16px;">Texto escrito em tamanho 16px (Verdana)</p>
+<form class="clearfix">
+<label for="texto1">Texto mais longo</label><input type="text" id="texto1" name="texto1">
+<label for="texto2">Texto</label><input type="text" id="texto2" name="texto2" >
+</form>
+	<article>
+		<h2>Primeiro Artigo</h2>
+		<section id="um">
+		<h3>Primeiro Capítulo</h3>
+			<h4>Título</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<ol>
+				<li>Primeiro</li>
+				<li>Segundo</li>
+				<li>Terceiro
+					<ol class="animated fadeIn">
+						<li>Terceiro ponto um</li>
+						<li>Terceiro ponto dois</li>
+					</ol>
+				</li>
+				<li>Quarto</li>
+				<li>Quinto
+					<ol class="animated fadeIn">
+						<li>Quinto ponto um</li>
+						<li>Quinto ponto dois</li>
+					</ol>
+				</li>
+			</ol>
+			<dl>
+				<dt>Título</dt>
+				<dd>Dado</dd>
+			</dl>
+			<figure>
+				<img src="imagens/krumlov_2.png" alt="Foto da cidade de Krumlov tirada do alto de uma elevação" title="Fotos de viagem" />
+					<figcaption>Foto da cidade de Krumlov tirada do alto de uma elevação, durante uma viagem à República Tcheca</figcaption>
+			</figure>
+		</section>
+		<section id="dois">
+		<h3>Segundo capítulo</h3>
+			<h4>Mais outro título</h4>
+			<p>Repetição do lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<ol class="menu">
+				<li>Primeiro</li>
+				<li>Segundo</li>
+					<li>Algum texto
+						<ol class="animated fadeIn">
+							<li>Segundo ponto um</li>
+							<li>Segundo ponto dois</li>
+						</ol>
+					</li>
+				<li>Terceiro</li>
+					<li>Algum texto
+						<ol class="animated fadeIn">
+							<li>Terceiro ponto um</li>
+							<li>Terceiro ponto dois</li>
+						</ol>
+					</li>
+			</ol>
+			<dl>
+				<dt>Título</dt>
+				<dd>Dado</dd>
+			</dl>
+			<figure>
+				<img src="imagens/krumlov_2.png" alt="Foto da cidade de Krumlov tirada do alto de uma elevação" title="Fotos de viagem" />
+					<figcaption>Foto da cidade de Krumlov tirada do alto de uma elevação, durante uma viagem à República Tcheca</figcaption>
+			</figure>
+		</section>
+	</article>
+	</main>
+	<footer>&copy; Copyright 2017</footer>
+</body>
+</html>

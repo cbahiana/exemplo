@@ -1,0 +1,140 @@
+body {font-family:Ubuntu, Arial;margin:35px 0;z-index:100;}
+
+#container {width:800px;padding:0;margin:0 auto;}
+p {color:#333;margin:0;}
+div#tres {padding:20px;}
+div#tres p {}
+header {width:100%;text-align: center;margin:0;padding:0;border-bottom:solid 1px #333;}
+
+h1:first-child {padding:10px;color:#AAA;text-shadow: 2px 2px 2px #000000;}
+
+body header {/*display:none;visibility:hidden;*/height:100px;background-image:url(../imagens/green_leaf_natural_w_YbfH4.jpg);background-size:cover;}
+
+nav a {display:inline-block;margin:0;padding:0.4em 1em 0.3em;text-decoration:none;}
+nav a:hover, nav a:focus, nav a.ativo {background:#519100;color:#fff;}
+
+main h1:nth-child(2)::after{content:" - Exemplo de tabela feita por DIV+CSS";}
+
+div#botao {position:relative;margin:0 0.3em;padding-left: 6.5em;}
+div#bloqueia {z-index:100;position:absolute;padding:0.5em;background:#fff;}
+table th, table td {padding:0.3em 0.5em 0.1em;}
+table th {background:#DDD;text-transform: uppercase;padding:0;}
+table thead th {text-align: center;}
+table tfoot td {background:#DDD;padding:5px;}
+table#teste {margin:2em auto;border:solid 3px #EEEEEE;}
+table#teste caption {background:#DDDDDD;padding:0.5em 1em 0.3em;text-align:center;font-weight:bold;font-size:larger;/*text-transform:uppercase;*/font-family: 'Lobster', cursive;}
+table#teste tr:nth-child(odd) {background:#CCC;}
+table#teste th, table#teste td {padding:0.5em;}
+table#teste th {background:#EEEEEE;text-align:center;font-weight:bold;text-transform: uppercase;}
+table#teste tfoot {background:#EEEEEE;font-size:smaller;}
+label {margin:0 0.3em;min-width: 6em;display: inline-block;text-align:right;}
+label, input {margin-bottom:0.5em;}
+.pessoal {margin-left: 6em;}
+fieldset {margin:1em auto;}
+legend {padding:0 0.5em;}
+#valida, .erro {color:#A00;}
+
+footer {box-sizing:border-box;background:#000;text-align:center;padding:10px;margin:1em 0 0;position:fixed;left:0;bottom:0;width:100%;}
+
+/* Configuração de tabela com div */
+.tabela {display:table;width:60%;border:solid red 1px;}
+.linha {display:table-row;border:solid blue 1px;}
+.celula {display:table-cell;border: solid green 1px;}
+
+/* Posicionamento absoluto dentro de relativo, filtros */
+#primeira, #segunda {width:50%;height:400px;margin:10px auto;}
+#primeira {float:left;background:#CCF;}
+#segunda {
+	position:relative;
+	float:right;
+	background-color:/*#A00*/ rgba(212, 127, 127, .5);
+	/*filter:opacity(50%); 
+	-moz-filter:opacity(50%);
+	-widget-filter:opacity(50%);*/
+	}
+#percentual {box-sizing:border-box;padding:2em;width:50%;border:dashed 1px #999;margin:5.8em auto;}
+#absoluta {color:#FFF; text-shadow: 0 0 8px rgba(5, 5, 5, 1); font-weight:bold; box-sizing:border-box; padding:15px 0 0 0; position:absolute; top:100px;right:107px; font-size:smaller;
+background: url("../imagens/sprite.jpg") -848px -4px /*-616px -236px*/;
+
+ width:70px; height:70px; text-align:center; -webkit-border-radius: 50%;-moz-border-radius: 50%x;border-radius: 50%;
+/*filter:opacity(100%); 
+-moz-filter:opacity(100%);
+-widget-filter:opacity(100%);
+-webkit-filter: hue-rotate(80deg);*/
+/*filter: hue-rotate(90deg);*/
+}
+#absoluta::after {content:"Absoluta";}
+
+div#primeira div {background:#DDD;}
+div#primeira div:first-child {background:#009;}
+
+div#primeira div#dois {
+	width:100px;
+	height:100px;
+	-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;
+	background-color: #FF4136;
+}
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideOutRight {
+  0% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  100% {
+  background:yellow;
+  margin:10px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  }
+  }
+  @keyframes slideOutRight {
+  0% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  100% {
+  background:yellow;
+  margin:10px;
+  content: "\272A";
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  }
+  }
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix {display: inline-block;}
+/* start commented backslash hack \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* close commented backslash hack */
+
+/* Vão começar as media queries */
+   @media (max-width:768px){
+	#container {width:80vw;}
+	body {margin:2px;padding:5em 0.5em 1em;}
+	.tabela {width:97%;margin:5px auto;}
+	label {display:block;text-align:left;margin:1em auto 0.3em 0.3em;}
+	#primeira, #segunda {float:none;width:100%;}
+	table#teste {float:none;}
+   }
+   
+ @media (max-width:480px) {
+	nav {display:block;position:fixed;top:5px;right:5px;border:solid 1px #333;background-color:#FFF;}
+	nav a {display:block;}
+	header {margin-top:15px;}
+	.tabela, .linha, .celula {display:block;}
+	fieldset legend {display:block;clear:both;}
+ }
